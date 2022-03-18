@@ -18,10 +18,10 @@ public class PlayerMoviment : MonoBehaviour
     void Update()
     {
         float i = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
-        rb.velocity += new Vector2(i*10, 0.0f);
+        rb.velocity = new Vector2(i*100, rb.velocity.y);
 
         if (Input.GetKeyDown(KeyCode.Space)) {
-            rb.AddForce(new Vector2(0, 20), ForceMode2D.Impulse);
+            rb.AddForce(new Vector2(0, 5), ForceMode2D.Impulse);
         }
     }
 }
